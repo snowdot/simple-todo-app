@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "72ca9d5aa64f42be81b17e9c0b8c8759",
+    "revision": "0a85f78b0ed9f2e4e99daf887b5f0878",
     "url": "/simple-todo-app/index.html"
   },
   {
-    "revision": "ef6d31ee240ac52cb262",
-    "url": "/simple-todo-app/static/css/main.e9f4ce4b.chunk.css"
+    "revision": "28e599f828b53d7982e2",
+    "url": "/simple-todo-app/static/css/main.8f635258.chunk.css"
   },
   {
     "revision": "8b304d7d5b7fde564bf1",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-todo-app/static/js/2.efa3be35.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ef6d31ee240ac52cb262",
-    "url": "/simple-todo-app/static/js/main.6737e756.chunk.js"
+    "revision": "28e599f828b53d7982e2",
+    "url": "/simple-todo-app/static/js/main.598accd9.chunk.js"
   },
   {
     "revision": "854a73988d019f913f52",
