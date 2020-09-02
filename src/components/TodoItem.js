@@ -2,6 +2,9 @@ import React from 'react';
 
 // Class-Based Component
 class TodoItem extends React.Component {
+    componentWillUnmount() {
+        alert('Item about to be deleted!');
+    };
     render() {
         const { completed, id, title } = this.props.todo;
 

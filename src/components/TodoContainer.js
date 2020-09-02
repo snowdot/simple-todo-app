@@ -6,7 +6,8 @@ import axios from "axios";
 
 class TodoContainer extends React.Component {
     state = {
-        todos: []
+        todos: [],
+        show: false
     };
     handleChange = id => {
         this.setState({
@@ -15,13 +16,14 @@ class TodoContainer extends React.Component {
                     todo.completed = !todo.completed;
                 }
                 return todo;
-            })
+            }),
+            show: !this.state.show
         });
     };
     delTodo = id => {
         axios
             .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-            .then(response => 
+            .then(response =>
                 this.setState({
                     todos: [
                         ...this.state.todos.filter(todo => {
@@ -50,7 +52,7 @@ class TodoContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                <Header />
+                <Header headerSpan={this.state.show}/>
                 <InputTodo addTodoProps={this.addTodoItem} />
                 <TodoList
                     todos={this.state.todos}
