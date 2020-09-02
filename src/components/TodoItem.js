@@ -3,6 +3,8 @@ import React from 'react';
 // Class-Based Component
 class TodoItem extends React.Component {
     render() {
+        const { completed, id, title } = this.props.todo;
+
         const completedStyle = {
             color: 'firebrick',
             opacity: 0.6,
@@ -13,16 +15,16 @@ class TodoItem extends React.Component {
             <label>
                 <input 
                     type="checkbox"
-                    checked={this.props.todo.completed} 
-                    onChange={() => this.props.handleChangeProps(this.props.todo.id)}
+                    checked={completed} 
+                    onChange={() => this.props.handleChangeProps(id)}
                 />
                 <span className="checkmark"></span>
             </label>
-            <button onClick={() => this.props.deleteTodoProps(this.props.todo.id)}>
+            <button onClick={() => this.props.deleteTodoProps(id)}>
                 x
             </button>
-            <span style={this.props.todo.completed ? completedStyle : null}>
-                {this.props.todo.title}
+            <span style={completed ? completedStyle : null}>
+                {title}
             </span>
         </li>;
     }
