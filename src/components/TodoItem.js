@@ -1,36 +1,39 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { render } from '@testing-library/react';
 
-// Class-Based Component
-class TodoItem extends React.Component {
-    componentWillUnmount() {
-        alert('Item about to be deleted!');
-    };
-    render() {
-        const { completed, id, title } = this.props.todo;
-
-        const completedStyle = {
-            color: 'firebrick',
-            opacity: 0.6,
-            textDecoration: 'line-through',
+const TodoItem = props => {
+    useEffect(() => {
+        return () => {
+            alert('Item about to be deleted.');
         }
+    }, [])
 
-        return <li className="todo-item">
+    const { completed, id, title } = props.todo;
+
+    const completedStyle = {
+        color: 'firebrick',
+        opacity: 0.6,
+        textDecoration: 'line-through',
+    }
+
+    return (
+        <li className="todo-item">
             <label>
                 <input 
                     type="checkbox"
                     checked={completed} 
-                    onChange={() => this.props.handleChangeProps(id)}
+                    onChange={() => props.handleChangeProps(id)}
                 />
                 <span className="checkmark"></span>
             </label>
-            <button onClick={() => this.props.deleteTodoProps(id)}>
+            <button onClick={() => props.deleteTodoProps(id)}>
                 x
             </button>
             <span style={completed ? completedStyle : null}>
                 {title}
             </span>
-        </li>;
-    }
+        </li>
+    )
 }
 
 export default TodoItem;
